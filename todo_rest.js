@@ -5,7 +5,6 @@ const port = 4000;
 app.use(express.json());
 // In-memory task data (replace with a database in production)
 let tasks = [];
-// let maps = {};
 // Get all tasks
 app.get('/api/tasks', (req, res) => {
   console.log("get")
@@ -14,8 +13,7 @@ app.get('/api/tasks', (req, res) => {
 // Create a new task
 app.post('/api/tasks', (req, res) => {
   const task = req.body;
-  // console.log(task);
-  // maps.push(task);
+  console.log(task);
   tasks.push(task);
   res.status(201).json(task);
 });
